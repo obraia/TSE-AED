@@ -327,13 +327,22 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_cadastrarPartidoActionPerformed
 
     private void btn_carregarImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_carregarImagemActionPerformed
-        System.out.println("você clicou em carregar imagem");
+        System.out.println("-> [HomeFrame] você clicou em carregar imagem");
+        carregarImagem();
+    }//GEN-LAST:event_btn_carregarImagemActionPerformed
+
+    private void carregarImagem() {
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        
         FileFilter imageFilter = new FileNameExtensionFilter("Image files", ImageIO.getReaderFileSuffixes());
         fileChooser.addChoosableFileFilter(imageFilter);
+        fileChooser.setAcceptAllFileFilterUsed(false);
         fileChooser.showOpenDialog(jPanel1);
-    }//GEN-LAST:event_btn_carregarImagemActionPerformed
+        
+        File file = fileChooser.getSelectedFile();
+        
+        System.out.println("");
+    }
 
     /**
      * @param args the command line arguments
