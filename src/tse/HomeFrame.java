@@ -5,6 +5,13 @@
  */
 package tse;
 
+import java.awt.FileDialog;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author Bryan
@@ -39,10 +46,12 @@ public class HomeFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         textFiled_siglaPartido = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        btn_partidos1 = new javax.swing.JButton();
+        btn_cadastrarPartido = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         label_logoPartido = new javax.swing.JLabel();
-        btn_partidos2 = new javax.swing.JButton();
+        btn_carregarImagem = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
         btn_partidos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,14 +145,14 @@ public class HomeFrame extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(27, 48, 90));
         jLabel4.setText("CADASTRAR NOVO PARTIDO");
 
-        btn_partidos1.setBackground(new java.awt.Color(27, 48, 90));
-        btn_partidos1.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
-        btn_partidos1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_partidos1.setText("Cadastrar");
-        btn_partidos1.setActionCommand("btn_cadastrarPartido");
-        btn_partidos1.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrarPartido.setBackground(new java.awt.Color(27, 48, 90));
+        btn_cadastrarPartido.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        btn_cadastrarPartido.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cadastrarPartido.setText("Cadastrar");
+        btn_cadastrarPartido.setActionCommand("btn_cadastrarPartido");
+        btn_cadastrarPartido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_partidos1ActionPerformed(evt);
+                btn_cadastrarPartidoActionPerformed(evt);
             }
         });
 
@@ -152,14 +161,14 @@ public class HomeFrame extends javax.swing.JFrame {
         label_logoPartido.setBackground(new java.awt.Color(153, 153, 255));
         label_logoPartido.setIcon(new javax.swing.ImageIcon("C:\\Progamação\\AED\\listas-aed\\Prática\\TSE\\src\\imagens\\logo_exemplo.jpg")); // NOI18N
 
-        btn_partidos2.setBackground(new java.awt.Color(27, 48, 90));
-        btn_partidos2.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
-        btn_partidos2.setForeground(new java.awt.Color(255, 255, 255));
-        btn_partidos2.setText("Carregar");
-        btn_partidos2.setActionCommand("btn_cadastrarPartido");
-        btn_partidos2.addActionListener(new java.awt.event.ActionListener() {
+        btn_carregarImagem.setBackground(new java.awt.Color(27, 48, 90));
+        btn_carregarImagem.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
+        btn_carregarImagem.setForeground(new java.awt.Color(255, 255, 255));
+        btn_carregarImagem.setText("Carregar");
+        btn_carregarImagem.setActionCommand("btn_carregarImagem");
+        btn_carregarImagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_partidos2ActionPerformed(evt);
+                btn_carregarImagemActionPerformed(evt);
             }
         });
 
@@ -171,7 +180,7 @@ public class HomeFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(label_logoPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_partidos2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn_carregarImagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -180,7 +189,7 @@ public class HomeFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(label_logoPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_partidos2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(btn_carregarImagem, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -196,8 +205,8 @@ public class HomeFrame extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(btn_partidos1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addComponent(btn_cadastrarPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,12 +225,38 @@ public class HomeFrame extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_partidos1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_cadastrarPartido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("tab1", jPanel3);
+        jTabbedPane1.addTab("Partidos", jPanel3);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 692, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 227, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Municípios", jPanel7);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 692, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 227, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel8);
 
         btn_partidos.setBackground(new java.awt.Color(27, 48, 90));
         btn_partidos.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
@@ -238,15 +273,15 @@ public class HomeFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTabbedPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btn_partidos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1))
-                    .addComponent(jTabbedPane1))
+                        .addComponent(jLabel1)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -255,15 +290,11 @@ public class HomeFrame extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addContainerGap(22, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_partidos, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(btn_partidos, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("Partidos");
@@ -291,13 +322,18 @@ public class HomeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFiled_nomePartidoActionPerformed
 
-    private void btn_partidos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_partidos1ActionPerformed
+    private void btn_cadastrarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarPartidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_partidos1ActionPerformed
+    }//GEN-LAST:event_btn_cadastrarPartidoActionPerformed
 
-    private void btn_partidos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_partidos2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_partidos2ActionPerformed
+    private void btn_carregarImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_carregarImagemActionPerformed
+        System.out.println("você clicou em carregar imagem");
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileFilter imageFilter = new FileNameExtensionFilter("Image files", ImageIO.getReaderFileSuffixes());
+        fileChooser.addChoosableFileFilter(imageFilter);
+        fileChooser.showOpenDialog(jPanel1);
+    }//GEN-LAST:event_btn_carregarImagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -335,9 +371,9 @@ public class HomeFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cadastrarPartido;
+    private javax.swing.JButton btn_carregarImagem;
     private javax.swing.JButton btn_partidos;
-    private javax.swing.JButton btn_partidos1;
-    private javax.swing.JButton btn_partidos2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -348,6 +384,8 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel label_logoPartido;
     private javax.swing.JTextField textFiled_nomePartido;
